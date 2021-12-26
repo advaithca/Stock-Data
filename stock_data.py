@@ -48,7 +48,7 @@ if not tickerdf.empty:
     st.line_chart(tickerdf.Volume)
 else :
     st.error("No data found for this company")
-    
+
 st.write("""
 ***
 """)
