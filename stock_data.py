@@ -5,7 +5,7 @@ import csv
 import csv
 
 tickers = []
-with open(r'D:\Documents\Projects\streamlit\nasdaq_screener_1640497257523.csv') as f:
+with open(r'nasdaq_screener_1640497257523.csv') as f:
     r = csv.reader(f)
     header = next(r)
     for row in r:
