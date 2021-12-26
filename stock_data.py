@@ -19,6 +19,8 @@ st.write("""
 # Simple Stock Price App
 
 ### Shows ***closing price*** and ***volume*** of Selected Company
+
+***
 """)
 
 tickersymbol = ''
@@ -35,11 +37,18 @@ tickerdata = yf.Ticker(tickersymbol)
 
 tickerdf = tickerdata.history(period='1d',start='2010-5-31',end='2020-5-31')
 
+if not tickerdf.empty:
+    st.write("""
+    ## Closing Price
+    """)
+    st.line_chart(tickerdf.Close)
+    st.write("""
+    ## Volume Price
+    """)
+    st.line_chart(tickerdf.Volume)
+else :
+    st.error("No data found for this company")
+    
 st.write("""
-## Closing Price
+***
 """)
-st.line_chart(tickerdf.Close)
-st.write("""
-## Volume Price
-""")
-st.line_chart(tickerdf.Volume)
